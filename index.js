@@ -36,6 +36,18 @@ function total() {
 
     return t
 }
+const itemsAndPrices = []
+
+ for (let i = 0; i < l; i++) {
+   let itemAndPrice = cart[i]
+   let item = Object.keys(itemAndPrice)[0]
+   let price = itemAndPrice[item]
+
+   itemsAndPrices.push(`${item} at \$${price}`)
+ }
+
+ console.log(`In your cart, you have ${itemsAndPrices.join(', ')}.`)
+}
 
 function removeFromCart(item) {
   let itemInCart = false
@@ -59,5 +71,5 @@ function placeOrder(cardNumber) {
    return console.log("We don't have a credit card on file for you to place your order.")
  }
  console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`)
- cart = []
-}
+ cart = [];
+};
